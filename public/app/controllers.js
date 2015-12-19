@@ -1,0 +1,115 @@
+angular.module('DreamCtrls', ['DreamServices'])
+.controller('HomeCtrl', ['$scope', 'Dream', function($scope, Airplane) {
+
+  $scope.dreams = [];
+  $scope.search = '';
+
+  Dream.query(function success(data) {
+    $scope.dreams = data;
+  }, function error(data) {
+    console.log(data)
+  });
+
+  $scope.deleteDream = function(id, dreamsIdx) {
+    Dream.delete({id: id}, function success(data) {
+      $scope.dreams.splice(dreamsIdx, 1);
+    }, function error(data) {
+      console.log(data);
+    });
+  }
+
+}])
+
+.controller('ShowCtrl', ['$scope', '$routeParams', 'Dream', function($scope, $routeParams, Dream) {
+  $scope.dream = {};
+
+  Dream.get({id: $routeParams.id}, function success(data) {
+    $scope.dream = data;
+  }, function error(data) {
+    console.log(data);
+  });
+}])
+
+.controller('ShowAllCtrl', ['$scope', '$routeParams', 'Dream', function($scope, $routeParams, Dream) {
+  $scope.dream = {};
+
+  Dream.query(function success(data) {
+    $scope.dreams = data;
+  }, function error(data) {
+    console.log(data)
+  });
+
+  $scope.deleteDream = function(id, dreamsIdx) {
+    Dream.delete({id: id}, function success(data) {
+      $scope.dreams.splice(dreamsIdx, 1);
+    }, function error(data) {
+      console.log(data);
+    });
+  }
+}])
+
+.controller('NewCtrl', ['$scope', '$location', 'Dream', function($scope, $location, Dream) {
+  $scope.dream = {
+    date: '',
+    theme: '',
+    content: ''
+  };
+
+  $scope.createDream = function() {
+    Dream.save($scope.dream, function success(data) {
+      $location.path('/dreams/' + data._id);
+    }, function error(data) {
+      console.log(data);
+    });
+  }
+}])
+.controller('NavCtrl', ['$scope', "Auth", function($scope, Auth) {
+  $scope.logout = function() {
+    Auth.removeToken();
+  };
+}])
+.controller("LoginCtrl", [
+  "$scope", 
+  "$http",
+  "$location",
+  "Auth",
+  function($scope, $http, $location, Auth) {
+    $scope.user = {
+      email: "",
+      password: ""
+    };
+    $scope.actionName = "Login";
+    $scope.userAction = function() {
+      $http.post("/api/auth", $scope.user).then(function(res) {
+        Auth.saveToken(res.data.token);
+        $location.path("/");
+      }, function(res) {
+        console.log(res.data);
+      });
+    };
+  }])
+  .controller("SignupCtrl", [
+    "$scope",
+    "$http",
+    "$location",
+    "Auth",
+    function($scope, $http, $location, Auth) {
+      $scope.user = {
+        email: "",
+        password: ""
+      };
+      $scope.actionName = "Signup";
+      $scope.userAction = function() {
+        $http.post("/api/users", $scope.user).then(function(res) {
+          $http.post("/api/auth", $scope.user).then(function(res) {
+            Auth.saveToken(res.data.token);
+            $location.path("/");
+          }, function(res) {
+            console.log(res.data);
+          });
+        }, function(res) {
+          console.log(res.data);
+        });
+      }      
+  }]);
+
