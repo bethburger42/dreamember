@@ -1,13 +1,14 @@
+<h1>My Dreams</h1>
 
-<a href="/dreams/new" class="btn btn-success">Log a New Dream</a>
+<a href="/dreams/new" class="btn btn-success">Log a New Dream</a><br><br>
 
-<div class="form-group"><br />
+<!-- <div class="form-group"><br />
   <input type="text" class="form-control" id="search" placeholder="Search" ng-model="search">
-</div>
+</div> -->
 
 <div class="container" ng-controller="ShowAllCtrl">
-<div class="well" ng-repeat="dream in dreams | filter:{date:search} track by dream.id">
-  <h1>{{dream.date}} {{dream.theme}}</h1>
-  <a ng-href="/dreams/{{dream.id}}">View Dream Description</a>
-  <a ng-click="deleteDream(dream._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
+<div class="well" ng-repeat="dream in dreams track by $index">
+  <h2>{{dream.date | date:'MM/dd/yyyy' }} {{dream.theme}}</h2>
+  <h3><a ng-href="/dreams/{{dream._id}}">View Dream Description</a></h3>
+  <a ng-click="deleteDream(dream._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a><br>
 </div>

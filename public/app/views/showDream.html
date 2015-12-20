@@ -1,12 +1,12 @@
-<h1>Your dream from... {{dream.date}}</h1>
+<h1>My dream from... {{dream.date | date:'MM/dd/yyyy' }}</h1>
 
-<div class="well">
-  <p>
-    Main Theme: {{dream.theme}}
-  </p>
-  <p>
-    Dream: {{dream.content}}
-  </p>
+<div class="row">
+<!--   <div class="row"> -->
+    <div class="col-md-6 blue-box">
+      <h3>Theme: {{dream.theme}}</h3>
+      <h4>{{dream.content}}</h4>
+    </div>
+<!--   </div> -->
 </div>
 
 <a href="javascript:history.back()" text-align="center" class="btn btn-primary">&larr; Back</a>

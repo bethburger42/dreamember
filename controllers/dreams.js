@@ -9,10 +9,18 @@ router.get('/', function(req, res) {
   });
 });
 
+// router.post('/', function(req, res) {
+//   Dream.create(req.body, function(err, dreams) {
+//     if (err) return res.send({message: 'An error occurred when creating this dream.'});
+//     res.send(dream);
+//   });
+// });
+
 router.post('/', function(req, res) {
-  Dream.create(req.body, function(err, dreams) {
-    if (err) return res.send({message: 'An error occurred when creating this dream.'});
-    res.send(dream);
+  var dream = new Dream(req.body);
+  dream.save(function(err) {
+    if (err) return res.send({message: 'An error occurred when creating an airplane'});
+    res.send(airplane);
   });
 });
 
