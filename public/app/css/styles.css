@@ -1,7 +1,7 @@
 body {
   font-family: 'Corben', cursive; 
   /*font-weight: 400;*/
-  color: grey;
+/*  color: grey;*/
 }
 
 h1 { 
@@ -10,16 +10,29 @@ h1 {
   color: #3186CF;
 }
 
-.blue-box {
-  background-color: rgba(245, 245, 245, 0.5);
-  /*background-color: #3186CF; */
-  color: black; 
-  padding: 4px 12px; 
-  margin: 24px 0; 
-  border: 1px solid;
-  border-radius: 10px;
-  /*opacity: 0.5;*/
+.trans-box {
+  background-color: rgba(245, 245, 245, 0.7);
 }
 
-#video-controls { width: 333px; float: right;}
-#video-controls a { color: #3186CF; text-decoration: underline; }
+.main-content {
+  margin-top: 25px;
+}
+
+.back {
+  margin-top: 10px;
+}
+
+#video-controls { 
+  width: 333px; 
+  float: right;
+  color: black; 
+  padding: 4px 12px; 
+  /*  margin: 24px 0; */
+  border: 1px solid;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+#video-controls a { 
+  color: #3186CF; 
+  text-decoration: underline; 
+}

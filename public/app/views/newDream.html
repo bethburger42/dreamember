@@ -1,21 +1,21 @@
 <h1>I Had A Dream!</h1>
 
-<form ng-submit="createDream()">
+<form ng-submit="createDream()" class="well trans-box main-content">
   <div class="row">
     <div class="form-group col-lg-3 col-md-4"><br>
       <label for="date">Date</label>
-      <input type="date" class="form-control" id="date" ng-model="dream.date">
+      <input type="date" class="form-control trans-box" id="date" ng-model="dream.date">
     </div>
   </div>
   <div class="row">
     <div class="form-group col-lg-6 col-md-6">
       <label for="theme">Main Theme of Your Dream</label>
-      <input type="text" class="form-control" id="theme" ng-model="dream.theme">
+      <input type="text" class="form-control trans-box" id="theme" ng-model="dream.theme">
     </div>
   </div>
   <div class="form-group">
     <label for="content">Describe Your Dream</label>
-    <textarea class="form-control" id="content" ng-model="dream.content"></textarea>
+    <textarea class="form-control trans-box" id="content" ng-model="dream.content"></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

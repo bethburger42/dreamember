@@ -6,8 +6,7 @@
   <input type="text" class="form-control" id="search" placeholder="Search" ng-model="search">
 </div> -->
 
-<div class="container" ng-controller="ShowAllCtrl">
-<div class="well" ng-repeat="dream in dreams track by $index">
+<div class="well trans-box" ng-repeat="dream in dreams track by $index">
   <h2>{{dream.date | date:'MM/dd/yyyy' }} {{dream.theme}}</h2>
   <h3><a ng-href="/dreams/{{dream._id}}">View Dream Description</a></h3>
   <a ng-click="deleteDream(dream._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a><br>
