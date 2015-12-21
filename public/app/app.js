@@ -13,11 +13,15 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   })
   .when('/dreams/new', {
     templateUrl: 'app/views/newDream.html',
-    controller: 'NewCtrl'
+    controller: 'NewDreamCtrl'
   })
   .when('/dreams/:id', {
     templateUrl: 'app/views/showDream.html',
     controller: 'ShowCtrl'
+  })
+  .when('/symbols/new', {
+    templateUrl: 'app/views/newSymbol.html',
+    controller: 'NewSymbolCtrl'
   })
   .when('/login', {
     templateUrl: 'app/views/userLogin.html',

@@ -1,18 +1,18 @@
 angular.module('DreamCtrls', ['DreamServices'])
-.controller('HomeCtrl', ['$scope', 'Dream', function($scope, Airplane) {
+.controller('HomeCtrl', ['$scope', 'Symbol', function($scope, Symbol) {
 
-  $scope.symbols = [];
+  $scope.symbol = {};
   $scope.search = '';
 
-  // Dream.query(function success(data) {
-  //   $scope.dreams = data;
-  // }, function error(data) {
-  //   console.log(data)
-  // });
+  Symbol.query(function success(data) {
+    $scope.symbols = data;
+  }, function error(data) {
+    console.log(data)
+  });
 
-  // $scope.deleteDream = function(id, dreamsIdx) {
-  //   Dream.delete({id: id}, function success(data) {
-  //     $scope.dreams.splice(dreamsIdx, 1);
+  // $scope.deleteSymbol = function(id, symbolsIdx) {
+  //   Symbol.delete({id: id}, function success(data) {
+  //     $scope.symbols.splice(symbolsIdx, 1);
   //   }, function error(data) {
   //     console.log(data);
   //   });
@@ -49,7 +49,7 @@ angular.module('DreamCtrls', ['DreamServices'])
   }
 }])
 
-.controller('NewCtrl', ['$scope', '$location', 'Dream', function($scope, $location, Dream) {
+.controller('NewDreamCtrl', ['$scope', '$location', 'Dream', function($scope, $location, Dream) {
   $scope.dream = {
     user_id: '',
     date: '',
@@ -66,6 +66,22 @@ angular.module('DreamCtrls', ['DreamServices'])
     });
   }
 }])
+
+.controller('NewSymbolCtrl', ['$scope', '$location', 'Symbol', function($scope, $location, Symbol) {
+  $scope.symbol = {
+    term: '',
+    meaning: ''
+  };
+
+  $scope.createSymbol = function() {
+    Symbol.save($scope.symbol, function success(data) {
+      $location.path('/');
+    }, function error(data) {
+      console.log(data);
+    });
+  }
+}])
+
 .controller('NavCtrl', ['$scope', "Auth", function($scope, Auth) {
   $scope.logout = function() {
     Auth.removeToken();

@@ -4,6 +4,9 @@ angular.module("DreamServices", ["ngResource"])
 .factory("Dream", ["$resource", function($resource, Auth) {
   return $resource("http://localhost:3000/api/dreams/:id");
 }])
+.factory("Symbol", ["$resource", function($resource) {
+  return $resource("http://localhost:3000/api/symbols/:id");
+}])
 .factory("Auth", ["$window", function($window) {
   return {
     saveToken: function(token) {

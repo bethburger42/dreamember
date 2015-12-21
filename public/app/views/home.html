@@ -2,29 +2,23 @@
 
 <div class="row">
   <div class="col-lg-10 col-md-offset-1 text-center well trans-box main-content">
-  <h3>dREaMEMBER is an app for you to analyze and remember your dreams. Enter an idea or word from your dream below to receive an instant interpretation:</h3>
-  <div class="row">
-    <div class="form-group col-lg-4 col-md-4 col-md-offset-4"><br>
-      <!-- <label for="search">Dream Symbol</label> -->
-      <input type="text" class="form-control" id="search" placeholder="Search by Keyword" ng-model="search">
+    <h3>dREaMEMBER is an app for you to analyze and remember your dreams. Enter an idea or word from your dream below to receive an instant interpretation:</h3>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-md-offset-4"><br>
+        <input type="text" class="form-control" id="search" placeholder="Search by Keyword" ng-model="search">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 well trans-box">
+        <h4>Meaning: {{symbol.meaning}}</h4>
+      </div>
+    </div>
+    <div class="row" ng-hide="isLoggedIn()">
+      <div class="col-md-6 col-md-offset-3 trans-box">
+        <h3>Start remembering your dreams today!</h3> 
+        <h4>Members can save dreams and keep a dream diary to review and analyze in the future.</h4>
+        <a href="/signup" class="btn btn-success su-btn" ng-hide="isLoggedIn()">Sign up now!</a>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 well trans-box">
-      <h4>Meaning: {{symbol.meaning}}</h4>
-    </div>
-  </div>
-  <div class="row" ng-hide="isLoggedIn()">
-    <div class="col-md-6 col-md-offset-3 trans-box">
-      <h3>Start remembering your dreams today!</h3> 
-      <h4>Members can save dreams and keep a dream diary to review and analyze in the future.</h4>
-      <a href="/signup" class="btn btn-success su-btn" ng-hide="isLoggedIn()">Sign up now!</a>
-    </div>
-  </div>
-
-
 </div>
-</div>
-
-
-

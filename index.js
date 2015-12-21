@@ -41,6 +41,7 @@ app.post('/api/auth', function(req, res) {
 
 app.use('/api/dreams', require('./controllers/dreams'));
 app.use('/api/users', require('./controllers/users'));
+app.use('/api/symbols', require('./controllers/symbols'));
 
 app.get('*/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
