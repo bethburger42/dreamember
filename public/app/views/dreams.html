@@ -6,6 +6,6 @@
 
 <div class="well trans-box" ng-repeat="dream in dreams | filter:{theme:search} track by $index">
   <h3>{{dream.date | date:'MM/dd/yyyy' }} {{dream.theme}}</h3>
-  <h4><a ng-href="/dreams/{{dream._id}}">View Dream Description</a></h4>
-  <a ng-click="deleteDream(dream._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a><br>
-</div>
+  <h4><a ng-href="/dreams/{{dream.id}}">View Dream Description</a></h4>
+  <a ng-click="deleteDream(dream.id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a><br>
+</div>  

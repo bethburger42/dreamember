@@ -1,22 +1,22 @@
 angular.module('DreamCtrls', ['DreamServices'])
 .controller('HomeCtrl', ['$scope', 'Dream', function($scope, Airplane) {
 
-  $scope.dreams = [];
+  $scope.symbols = [];
   $scope.search = '';
 
-  Dream.query(function success(data) {
-    $scope.dreams = data;
-  }, function error(data) {
-    console.log(data)
-  });
+  // Dream.query(function success(data) {
+  //   $scope.dreams = data;
+  // }, function error(data) {
+  //   console.log(data)
+  // });
 
-  $scope.deleteDream = function(id, dreamsIdx) {
-    Dream.delete({id: id}, function success(data) {
-      $scope.dreams.splice(dreamsIdx, 1);
-    }, function error(data) {
-      console.log(data);
-    });
-  }
+  // $scope.deleteDream = function(id, dreamsIdx) {
+  //   Dream.delete({id: id}, function success(data) {
+  //     $scope.dreams.splice(dreamsIdx, 1);
+  //   }, function error(data) {
+  //     console.log(data);
+  //   });
+  // }
 
 }])
 
@@ -31,7 +31,8 @@ angular.module('DreamCtrls', ['DreamServices'])
 }])
 
 .controller('ShowAllCtrl', ['$scope', '$routeParams', 'Dream', function($scope, $routeParams, Dream) {
-  $scope.dream = {};
+  $scope.dreams = [];
+  $scope.search = '';
 
   Dream.query(function success(data) {
     $scope.dreams = data;
@@ -50,6 +51,7 @@ angular.module('DreamCtrls', ['DreamServices'])
 
 .controller('NewCtrl', ['$scope', '$location', 'Dream', function($scope, $location, Dream) {
   $scope.dream = {
+    user_id: '',
     date: '',
     theme: '',
     content: ''
@@ -57,7 +59,8 @@ angular.module('DreamCtrls', ['DreamServices'])
 
   $scope.createDream = function() {
     Dream.save($scope.dream, function success(data) {
-      $location.path('/dreams/' + data._id);
+      // $location.path('/dreams/' + data._id);
+      $location.path('/');
     }, function error(data) {
       console.log(data);
     });

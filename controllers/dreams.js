@@ -20,7 +20,7 @@ router.post('/', function(req, res) {
   var dream = new Dream(req.body);
   dream.save(function(err) {
     if (err) return res.send({message: 'An error occurred when creating an airplane'});
-    res.send(airplane);
+    res.send(dream);
   });
 });
 

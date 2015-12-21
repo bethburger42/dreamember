@@ -7,4 +7,17 @@ var DreamSchema = mongoose.Schema({
     content: String
 });
 
+DreamSchema.set('toJSON', {
+  transform: function(doc, ret, options) {
+    var returnJson = {
+      id: ret._id,
+      user_id: ret.user_id,
+      date: ret.date,
+      theme: ret.theme,
+      content: ret.content
+    };
+    return returnJson;
+  }
+});
+
 module.exports = mongoose.model('Dream', DreamSchema);
