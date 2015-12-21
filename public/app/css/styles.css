@@ -1,13 +1,12 @@
 body {
   font-family: 'Corben', cursive; 
-  /*font-weight: 400;*/
-/*  color: grey;*/
 }
 
 h1 { 
   font-family: 'Corben', cursive; 
   font-weight: 700; 
   color: #3186CF;
+  text-shadow: 2px 2px #16419E; 
 }
 
 legend {
@@ -19,11 +18,15 @@ legend {
 }
 
 .main-content {
-  margin-top: 25px;
+  margin-top: 20px; 
 }
 
 .back {
-  margin-top: 10px;
+  margin: 10px;
+}
+
+.su-btn {
+  margin-bottom: 10px;
 }
 
 #video-controls { 
@@ -39,4 +42,8 @@ legend {
 #video-controls a { 
   color: #3186CF; 
   text-decoration: underline; 
+}
+
+#title {
+  font-size: 1.25 em;
 }
