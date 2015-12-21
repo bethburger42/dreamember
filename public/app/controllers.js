@@ -1,7 +1,7 @@
 angular.module('DreamCtrls', ['DreamServices'])
 .controller('HomeCtrl', ['$scope', 'Symbol', function($scope, Symbol) {
 
-  $scope.symbol = {};
+  $scope.symbols = [];
   $scope.search = '';
 
   Symbol.query(function success(data) {

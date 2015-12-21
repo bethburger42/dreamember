@@ -4,9 +4,9 @@ var router = express.Router();
 
 router.route('/')
  .get(function(req, res) {
-   Symbol.find(function(err, items) {
+   Symbol.find(function(err, symbols) {
      if (err) return res.status(500).send(err);
-     res.send(items);
+     res.send(symbols);
    });
  })
  .post(function(req, res) {
