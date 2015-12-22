@@ -2,10 +2,10 @@ var TOKEN_STORAGE = "secretdreams-token";
 
 angular.module("DreamServices", ["ngResource"])
 .factory("Dream", ["$resource", function($resource, Auth) {
-  return $resource("http://localhost:3000/api/dreams/:id");
+  return $resource("/api/dreams/:id");
 }])
 .factory("Symbol", ["$resource", function($resource) {
-  return $resource("http://localhost:3000/api/symbols/:id");
+  return $resource("/api/symbols/:id");
 }])
 .factory("Auth", ["$window", function($window) {
   return {

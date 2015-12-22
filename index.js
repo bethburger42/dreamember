@@ -9,7 +9,10 @@ var User = require('./models/user');
 var secret = "superdupersecretpassword";
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/dreams');
+var uriUtil = require('mongodb-uri');
+var mongodbUri = process.env['MONGOLAB_URI'];
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/dreams');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -47,4 +50,4 @@ app.get('*/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000)
