@@ -1,5 +1,4 @@
 <h1>dREaMEMBER</h1>
-<hr>
 
 <a href="https://dreamember.herokuapp.com/" target="_blank">https://dreamember.herokuapp.com/</a>
 
@@ -48,7 +47,7 @@
   With these concepts in mind, I used the <a href="https://balsamiq.com/" target="_blank">Balsalmic</a> wireframing tool to create several site pages mockups. The wireframes are viewable <a href="https://github.com/bethburger42/dreamember/tree/master/wireframes" target="_blank">HERE</a>.
 </p>
 <p>
-  My next step was to build the site user authentication for signing up and logging into the website. I then developed the functionality for recording and displaying dreams. Once these models were working correctly, I related the users and dreams together in the database, which would allow users to create and display all of their individual dreams. During the development of the member area, I built out the pages using the bootstrap framework for consistent design. When the member area was complete, I turned my focus to the dream analyis portion of the website. I initially did some website data scraping, then decided to create the functionality for entering words and definitions within the dREaMEMBER site. For increased visual appeal, I installed the TubularJS video player to integrate a streaming background image for the website.
+  My next step was to build the site user authentication for signing up and logging into the website. I then developed the functionality for recording and displaying dreams. Once these models were working correctly, I related the users and dreams together in the database, which would allow users to create and display all of their individual dreams. During the development of the member area, I built out the pages using the bootstrap framework for consistent design. When the member area was complete, I turned my focus to the dream analysis portion of the website. I initially did some website data scraping, then decided to create the functionality for entering words and definitions within the dREaMEMBER site. For increased visual appeal, I installed the TubularJS video player to integrate a streaming background image for the website.
 </p>
 
 <h3>Known Issues</h3>
