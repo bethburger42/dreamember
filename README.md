@@ -28,12 +28,10 @@
 
 <h3>Installation</h3>
 <hr>
-<p>
-  <ul>
-    <li><code>npm install</code> in the terminal</li>
-    <li>Node modules included: bcrypt, body-parser, express, express-jwt, jsonwebtoken, mongoose</li>
-  </ul>
-</p>
+<ul>
+  <li><code>npm install</code> in the terminal</li>
+  <li>Node modules included: bcrypt, body-parser, express, express-jwt, jsonwebtoken, mongoose</li>
+</ul>
 
 <h3>Approach Taken</h3>
 <hr>
@@ -47,14 +45,14 @@
   </ul>
 </p>
 <p>
-  With these ideas in mind, I used the <a href="https://balsamiq.com/" target="_blank">Balsalmic</a> wireframing tool, to create several site pages mockups. The wireframes are viewable <a href="https://github.com/bethburger42/dreamember/tree/master/wireframes" target="_blank">HERE</a>.
+  With these concepts in mind, I used the <a href="https://balsamiq.com/" target="_blank">Balsalmic</a> wireframing tool to create several site pages mockups. The wireframes are viewable <a href="https://github.com/bethburger42/dreamember/tree/master/wireframes" target="_blank">HERE</a>.
 </p>
 <p>
-  My first step was to build the site user authentication for signing up and logging into the website. I then built the functionality for recording and displaying dreams. Once these models were working correctly, I tied the users and dreams together in the database, which would allowed users to create and display all of their individual dreams. During the development of the member area, I built out the pages using the bootstrap framework for consistent design. When the member area was complete, I turned my focus to the dream analyis portion of the website. I initially did some data scraping, then decided to create the functionality for entering words and definitions via the site. For increased visual appeal, I installed the TubularJS video player to integrate a streaming background image for the website.
+  My next step was to build the site user authentication for signing up and logging into the website. I then developed the functionality for recording and displaying dreams. Once these models were working correctly, I related the users and dreams together in the database, which would allow users to create and display all of their individual dreams. During the development of the member area, I built out the pages using the bootstrap framework for consistent design. When the member area was complete, I turned my focus to the dream analyis portion of the website. I initially did some website data scraping, then decided to create the functionality for entering words and definitions within the dREaMEMBER site. For increased visual appeal, I installed the TubularJS video player to integrate a streaming background image for the website.
 </p>
 
 <h3>Known Issues</h3>
-<h2>
+<hr>
 <ul>
   <li>The TubularJS video player works in Internet Explorer and Safari but loads sporadically in Chrome.</li>
   <li>The functionality for updating a Dream object has been removed temporarily, as it was working incorrectly.</li>
