@@ -10,7 +10,7 @@
     </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-1 well trans-box" ng-if="search" ng-repeat="symbol in symbols | filter:{term:search} track by symbol.id">
-        <h3>Term: {{symbol.term}}</h3>
+        <h3>{{symbol.term}}</h3>
         <h4>{{symbol.meaning}}</h4>
       </div>  
     </div>

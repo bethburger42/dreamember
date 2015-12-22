@@ -10,14 +10,6 @@ angular.module('DreamCtrls', ['DreamServices'])
     console.log(data)
   });
 
-  // $scope.deleteSymbol = function(id, symbolsIdx) {
-  //   Symbol.delete({id: id}, function success(data) {
-  //     $scope.symbols.splice(symbolsIdx, 1);
-  //   }, function error(data) {
-  //     console.log(data);
-  //   });
-  // }
-
 }])
 
 .controller('ShowCtrl', ['$scope', '$routeParams', 'Dream', function($scope, $routeParams, Dream) {
@@ -28,6 +20,7 @@ angular.module('DreamCtrls', ['DreamServices'])
   }, function error(data) {
     console.log(data);
   });
+
 }])
 
 .controller('ShowAllCtrl', ['$scope', '$routeParams', 'Dream', function($scope, $routeParams, Dream) {
@@ -60,7 +53,7 @@ angular.module('DreamCtrls', ['DreamServices'])
   $scope.createDream = function() {
     Dream.save($scope.dream, function success(data) {
       // $location.path('/dreams/' + data._id);
-      $location.path('/');
+      $location.path('/dreams');
     }, function error(data) {
       console.log(data);
     });
